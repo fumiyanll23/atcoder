@@ -1,9 +1,11 @@
 K = int(input())
 A, B = map(int, input().split())
 
-if(B-A+1 >= K or K == 1):
+flag = False
+for i in range(A, B+1):
+  if i%K == 0:
+    flag = True
+if flag:
   print("OK")
 else:
   print("NG")
-
-# WA * 2...
