@@ -1,12 +1,19 @@
 N = int(input())
 A = list(map(int, input().split()))
 
-prd = 1
-for i in range(N):
-  prd *= A[i]
-if(prd > 10**18):
-  print(-1)
+if 0 in A:
+  print(0)
+  exit()
 else:
+  flag = True
+  prd = 1
+  A.sort(reverse=True)
+  for i in range(N):
+    prd *= A[i]
+    if prd > 10**18:
+      flag = False
+      break
+if flag:
   print(prd)
-
-# Why printed TLE??
+else:
+  print(-1)
