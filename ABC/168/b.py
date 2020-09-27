@@ -1,10 +1,8 @@
 K = int(input())
-S = input()
+S = str(input())
 
-if(len(S) <= K):
+N = len(S)
+if(N <= K):
   print(S)
 else:
-  S[K] = '...'
-  print(S[0, K])
-
-# TypeError: 'str' object does not support item assignment
+  print(S[:K] + '...')
