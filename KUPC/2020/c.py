@@ -1,0 +1,15 @@
+print("""13
+aozccqxeesvgg
+bapzdcrxfetvh
+bcaqzecsxgeuv
+pbdarzfctxhev
+yqbeaszgcuxie
+dyrbfatzhcvxj
+deysbgauzicwx
+rdfytbhavzjcx
+wsdgyubiawzkc
+fwtdhyvbjaxzl
+fgwudiywbkayz
+tfhwvdjyxblaz
+uufiwwdkyybma
+""")
