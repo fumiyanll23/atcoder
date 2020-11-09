@@ -7,7 +7,7 @@ int main(void) {
 
   // compute
   int a = N / 100;
-  int b = N / 10;
+  int b = N % 100 / 10;
   int c = N % 10;
 
   // output
