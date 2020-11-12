@@ -1,7 +1,4 @@
-A = int(input())
-B = int(input())
-C = int(input())
-X = int(input())
+A, B, C, X = [int(input()) for _ in range(4)]
 
 cnt = 0
 for i in range(A+1):
