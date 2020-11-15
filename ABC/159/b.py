@@ -1,21 +1,32 @@
-S = str(input())
+# definitioin function palindromeChecker()
+def palindromeChecker(S, N): # N is required to be odd.
+  flag = True
+  half = N // 2
+  for i in range(half):
+    if S[i] != S[-(i+1)]:
+      flag = False
+  return flag
 
-N = len(S)
-half = (N - 1) / 2 # 半分よりも前
-fn = [0 for i in range(half)]
-f3 = [0 for i in range(3)]
+def main():
+  # input
+  S = str(input())
 
-# The first condition
-for i in range(half):
-  if S[i] == S[N-1-i]:
-    fn[i] += 1
-if sum(flag) == n:
-  f3[0] = 1
+  # compute
+  N = len(S)
+  T = S[:(N-1)//2]
+  M = len(T)
+  U = S[(N+3)//2 - 1:]
+  O = len(U)
+  a = palindromeChecker(S, N)
+  b = palindromeChecker(T, M)
+  c = palindromeChecker(U, O)
 
-# The second condition
-Sp = S[:half-1]
+  # output
+  if a and b and c:
+    print('Yes')
+  else:
+    print('No')
 
-#The third condition
-Sn = S[half+1:]
 
-# Get tired...:(
+if __name__ == "__main__":
+    main()
