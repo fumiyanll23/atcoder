@@ -1,3 +1,12 @@
-X, Y, Z = map(int, input().split())
+def main():
+    # input
+    X, Y, Z = map(int, input().split())
 
-print(Z, X, Y)
+    # compute
+
+    # output
+    print(Z, X, Y)
+
+
+if __name__ == '__main__':
+    main()
