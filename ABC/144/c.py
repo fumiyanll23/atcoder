@@ -1,6 +1,18 @@
-from math import factorial
+from math import sqrt
 
-N = int(input())
+def main():
+    # input
+    N = int(input())
 
-# 1. Find the nearest point.
-# 2. Calc the number of all paterns.
+    # compute
+    divs = []
+    for i in range(1,int(sqrt(N))+1):
+        if N%i == 0:
+            divs.append(i+N//i-2)
+
+    # output
+    print(min(N-1, min(divs)))
+
+
+if __name__ == '__main__':
+    main()
