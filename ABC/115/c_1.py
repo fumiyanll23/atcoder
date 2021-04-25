@@ -4,10 +4,9 @@ def main():
     hs = [int(input()) for _ in range(N)]
 
     # compute
-    n = N-K+1
     diffs = []
     hs.sort()
-    for i in range(n):
+    for i in range(N-K+1):
         diffs.append(hs[i+K-1]-hs[i])
 
     # output
