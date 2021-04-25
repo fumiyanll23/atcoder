@@ -12,7 +12,7 @@ def main():
         diffs[i] = abs(s-r)
 
     # output
-    print(max(0, min(diffs)))
+    print(min(diffs))
 
 
 if __name__ == '__main__':
