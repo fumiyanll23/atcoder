@@ -1,15 +1,22 @@
-import numpy as np
+def main():
+  # input
+  N, M = map(int, input().split())
+  ABs = [list(map(int, input().split())) for _ in range(N)]
 
-N, M = map(int, input().split())
-drink = []
-for i in range(N):
-  drink.append(list(map(int, input().split())))
+  # compute
+  ABs.sort(key=lambda x: x[0])
+  money = 0
+  for a, b in ABs:
+    if b < M:
+      money += a*b
+      M -= b
+    else:
+      money += a*M
+      break
 
-cost, cnt = 0, 0
-drink = np.sort(drink, axis=0).tolist()
-i = 0
-while cnt < M:
-  cnt += drink[i][1]
-  i += 1
+  # output
+  print(money)
 
-### Too confused...
+
+if __name__ == '__main__':
+  main()
