@@ -1,15 +1,22 @@
-N = int(input())
-a = list(map(int, input().split()))
+from math import gcd
+from functools import reduce
 
-X = max(a)
-x = min(a)
-while X != x:
-  a.sort(reverse=True)
-  for i in range(N):
-    if a[i] == X:
-      a[i] = X - x
-    else:
-      break
-  X = max(a)
-  x = a[N-1]
-print(a[0])
+def my_gcd(*numbers: int) -> int:
+  return reduce(gcd, numbers)
+
+def main():
+  # input
+  N = int(input())
+  As = list(map(int, input().split()))
+
+  # compute
+
+  # output
+  if N == 1:
+    print(As[0])
+  else:
+    print(my_gcd(*As))
+
+
+if __name__ == '__main__':
+  main()
