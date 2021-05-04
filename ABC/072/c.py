@@ -5,16 +5,14 @@ def main():
 
     # compute
     As.sort()
-    if len(As) == 1:
-        print(1)
-        exit()
-    else:
-        Bs = []
-        for i in range(N-1):
-            Bs.append(As[i+1]-As[i])
+    cnts = [0] * (10**5+3)
+    for a in As:
+        cnts[a-1] += 1
+        cnts[a] += 1
+        cnts[a+1] += 1
 
     # output
-    print(Bs.count(1))
+    print(max(cnts))
 
 
 if __name__ == '__main__':
