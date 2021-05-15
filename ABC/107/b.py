@@ -1,34 +1,27 @@
-# Input 
-H, W = map(int, input().split())
-a = []
-for _ in range(H):
-  a.append(list(str(input())))
+def main():
+    # input
+    H, W = map(int, input().split())
+    ass = [list(input()) for _ in range(H)]
 
-# Check every row -> column
-for i in range(H):
-  white = 0
-  for j in range(W):
-    if a[i][j] == '.':
-      white += 1
-  if white == W:
-    for j in range(W):
-      a[i][j] = ''
-# Check every column -> row
-for j in range(W):
-  white = 0
-  for i in range(H):
-    if a[i][j] == '.':
-      white += 1
-  if white == H:
+    # compute
     for i in range(H):
-      a[i][j] = ''
+        if ass[i] == ['.']*W:
+            ass[i] = [''] * W
 
-# Output
-ans = ['' for _ in range(H)]
-for i in range(H):
-  for j in range(W):
-    ans[i] += a[i][j]
-ansans = '\n'.join(ans)
-print(ansans)
+    for j in range(W):
+        cnt = 0
+        for i in range(H):
+            if ass[i][j]=='.' or ass[i][j]=='':
+                cnt += 1
+        if cnt == H:
+            for k in range(H):
+                ass[k][j] = ''
 
-### How remove '.' at cross points?
+    # output
+    for As in ass:
+        if ''.join(As) != '':
+            print(''.join(As))
+
+
+if __name__ == '__main__':
+    main()
