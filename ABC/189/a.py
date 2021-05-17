@@ -1,0 +1,15 @@
+def main():
+    # input
+    C = input()
+
+    # compute
+
+    # output
+    if C[0] == C[1] == C[2]:
+        print('Won')
+    else:
+        print('Lost')
+
+
+if __name__ == '__main__':
+    main()
