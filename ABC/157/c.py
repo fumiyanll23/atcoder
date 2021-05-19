@@ -1,14 +1,32 @@
-N, M = map(int, input().split())
-s = [0 for i in range(M)]
-c = [0 for i in range(M)]
-for i in range(M):
-  s[i], c[i] = map(int, input().split())
+def main():
+    # input
+    N, M = map(int, input().split())
+    scs = [list(map(int, input().split())) for _ in range(M)]
 
-ans = [0, 0, 0]
-for i in range(M):
-  ans[s[i]-1] = c[i]
+    # compute
+    if N == 1:
+        numbers = range(0, 10)
+    elif N == 2:
+        numbers = range(10, 100)
+    else:
+        numbers = range(100, 1000)
+    for i in numbers:
+        flag = True
+        number = list(map(int, str(i)))
+        for s,c in scs:
+            if number[s-1] == c:
+                pass
+            else:
+                flag = False
+        if flag:
+            print(''.join(list(map(str, number))))
+            exit()
+        else:
+            pass
 
-"""
-Add codes here
-"""
-print(ans[0]*100 + ans[1]*10 + ans[2])
+    # output
+    print(-1)
+
+
+if __name__ == '__main__':
+  main()
