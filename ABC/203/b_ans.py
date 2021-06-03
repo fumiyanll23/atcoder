@@ -3,12 +3,9 @@ def main():
     N, K = map(int, input().split())
 
     # compute
-    ans = 0
-    for i in range(1,N+1):
-        ans += i*K*100 + K*(K+1)//2
 
     # output
-    print(ans)
+    print(N*K*(100*(N+1)+(K+1)) // 2)
 
 
 if __name__ == '__main__':

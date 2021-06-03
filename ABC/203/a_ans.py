@@ -11,7 +11,7 @@ def main():
         print(a)
     elif c == a:
         print(b)
-    elif a!=b and b!=c:
+    else:
         print(0)
 
 

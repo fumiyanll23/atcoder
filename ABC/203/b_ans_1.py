@@ -5,7 +5,8 @@ def main():
     # compute
     ans = 0
     for i in range(1,N+1):
-        ans += i*K*100 + K*(K+1)//2
+        for j in range(1,K+1):
+            ans += 100*i + j
 
     # output
     print(ans)
