@@ -10,13 +10,12 @@ def main():
     for i in range(K):
         ddict[cs[i]] += 1
     ans = len(ddict)
-    print(ans, ddict)
     for i in range(N-K):
         ddict[cs[i]] -= 1
+        if ddict[cs[i]] == 0:
+            del ddict[cs[i]]
         ddict[cs[i+K]] += 1
         ans = max(ans, len(ddict))
-        print(i, i, i+K)
-        print(ans, ddict)
 
     # output
     print(ans)
