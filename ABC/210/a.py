@@ -1,0 +1,15 @@
+def main():
+    # input
+    N, A, X, Y = map(int, input().split())
+
+    # compute
+
+    # output
+    if N <= A:
+        print(X * N)
+    else:
+        print(X*A + Y*(N-A))
+
+
+if __name__ == '__main__':
+    main()
