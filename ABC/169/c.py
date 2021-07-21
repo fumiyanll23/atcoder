@@ -1,5 +1,13 @@
-A, B = map(int, input().split())
+def main():
+    # input
+    A, B = input().split()
+    A = int(A)
+    B = int(B.replace('.', ''))
 
-print(int(A*B))
+    # compute
 
-# ValueError: invalid literal for int() with base 10: '1.10'
+    # output
+    print(A * B // 100)
+
+if __name__ == '__main__':
+    main()
