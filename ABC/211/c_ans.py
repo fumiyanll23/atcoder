@@ -1,27 +1,21 @@
 def main():
     # input
     S = input()
+    T = 'chokudai'
     MOD = 10**9 + 7
 
     # compute
-    N = len(S)
-    T = '0chokudai'
-    M = len(T)
-    dp = [[0]*N for _ in range(M)]
-    for i in range(M):
-        for j in range(N):
-            if j == 0:
-                dp[i][j] = 1
-            elif i == 0:
-                dp[i][j] = 0
+    cnts = [0] * len(T)
+    for i, s in enumerate(S):
+        if s in T:
+            i = T.index(s)
+            if i == 0:
+                cnts[0] += 1
             else:
-                if S[i] != T[j]:
-                    dp[i][j] = dp[i-1][j] % MOD
-                else:
-                    dp[i][j] = (dp[i-1][j] + dp[i-1][j-1]) % MOD
+                cnts[i] = (cnts[i] + cnts[i-1]) % MOD
 
     # output
-    print(dp[-1][-1])
+    print(cnts[-1])
 
 
 if __name__ == '__main__':
